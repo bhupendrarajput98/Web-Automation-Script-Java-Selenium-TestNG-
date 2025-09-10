@@ -1,0 +1,13 @@
+agrichain-automation/
+├── src/
+│   ├── base/
+│   │   └── BaseTest.java
+│   ├── pages/
+│   │   ├── InputPage.java
+│   │   └── ResultPage.java
+│   ├── tests/
+│   │   └── LongestSubstringTest.java
+│   └── utils/
+│       └── WebDriverFactory.java
+├── pom.xml
+└── testng.xml
