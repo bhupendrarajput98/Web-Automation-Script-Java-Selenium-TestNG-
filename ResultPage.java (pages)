@@ -1,0 +1,17 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class ResultPage {
+    private WebDriver driver;
+    private By outputText = By.xpath("//div[contains(text(),'Output is')]/following-sibling::div");
+
+    public ResultPage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    public String getOutput() {
+        return driver.findElement(outputText).getText();
+    }
+}
