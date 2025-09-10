@@ -1,0 +1,27 @@
+package tests;
+
+import base.BaseTest;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import pages.InputPage;
+import pages.ResultPage;
+
+public class LongestSubstringTest extends BaseTest {
+
+    @Test
+    public void testLongestSubstringOutput() throws InterruptedException {
+        driver.get("https://agrichain.com/qa/input");
+
+        InputPage inputPage = new InputPage(driver);
+        inputPage.enterInput("abcabcbb");
+        inputPage.clickSubmit();
+
+        // Wait for navigation
+        Thread.sleep(2000);
+
+        ResultPage resultPage = new ResultPage(driver);
+        String result = resultPage.getOutput();
+
+        Assert.assertEquals(result, "3", "Output mismatch for input abcabcbb");
+    }
+}
